@@ -362,7 +362,7 @@
 				</section>
 					
 				
-        <section>
+        <section>P
 				<section>
 						<h2>Control Directives</h2>
 						<ul>
@@ -442,7 +442,9 @@
 						<h2>@for</h2>
 						<pre>
 							<code>
-								
+								@for $i from 1 through $grid-columns {
+								  .grid-#{$i} { @include grid-base($i); @extend .grid-block; }
+								}
 							</code>
 						</pre>
 			  </section>
@@ -451,7 +453,13 @@
 						<h2>@while</h2>
 						<pre>
 							<code>
-								
+								$types: 4
+								$type-width: 20px
+
+								@while $types > 0
+								  .while-#{$types}
+								    width: $type-width + $types
+								  $types: $types - 1
 							</code>
 						</pre>
 			  </section>
@@ -494,10 +502,6 @@
 				</section>
 
 				<section>
-					<h2>&</h2>
-				</section>
-			
-			  <section>
 						<h2>Libraries and Frameworks</h2>
 							<p class="fragment roll-in"><a href="http://compass-style.org">Compass</a></p>
 							<p class="fragment roll-in"><a href="http://bourbon.io">Bourbon</a></p>
